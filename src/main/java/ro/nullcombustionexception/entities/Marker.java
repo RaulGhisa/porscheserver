@@ -23,6 +23,12 @@ public class Marker {
     @Column(name = "hazard_type")
     private String hazardType;
 
+    @OneToOne(
+            mappedBy = "marker", cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY
+    )
+    private GpsData gpsData;
+
     public long getId() {
         return id;
     }

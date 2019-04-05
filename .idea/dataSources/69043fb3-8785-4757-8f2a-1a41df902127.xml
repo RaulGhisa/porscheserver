@@ -920,46 +920,56 @@
     </collation>
     <table id="231" parent="6" name="gps_data"/>
     <table id="232" parent="6" name="marker"/>
-    <column id="233" parent="231" name="x">
-      <Position>1</Position>
-      <DataType>float|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="234" parent="231" name="y">
-      <Position>2</Position>
-      <DataType>float|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="235" parent="231" name="marker_marker_id">
-      <Position>3</Position>
-      <DataType>bigint(20)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <key id="236" parent="231" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>marker_marker_id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <foreign-key id="237" parent="231" name="FKshmoejy1k6089m25djqrfwlqp">
-      <ColNames>marker_marker_id</ColNames>
-      <RefSchemaName>porsche-competition</RefSchemaName>
-      <RefTableName>marker</RefTableName>
-      <RefColNames>marker_id</RefColNames>
-    </foreign-key>
-    <column id="238" parent="232" name="marker_id">
+    <column id="233" parent="231" name="gps_data_id">
       <Position>1</Position>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="239" parent="232" name="hazard_type">
+    <column id="234" parent="231" name="x">
+      <Position>2</Position>
+      <DataType>float|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="235" parent="231" name="y">
+      <Position>3</Position>
+      <DataType>float|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="236" parent="231" name="marker_id">
+      <Position>4</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="237" parent="231" name="FK6847ak38vpxlaac2n0talx8kd">
+      <ColNames>marker_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="238" parent="231" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>gps_data_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="239" parent="231" name="FK6847ak38vpxlaac2n0talx8kd">
+      <ColNames>marker_id</ColNames>
+      <RefSchemaName>porsche-competition</RefSchemaName>
+      <RefTableName>marker</RefTableName>
+      <RefColNames>marker_id</RefColNames>
+    </foreign-key>
+    <column id="240" parent="232" name="marker_id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="241" parent="232" name="hazard_type">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="240" parent="232" name="PRIMARY">
+    <key id="242" parent="232" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>marker_id</ColNames>
       <Primary>1</Primary>

@@ -1,5 +1,7 @@
 package ro.nullcombustionexception.entities;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 
 @Entity
@@ -7,6 +9,15 @@ import javax.persistence.*;
 public class GpsData {
 
     @Id
+    @GeneratedValue(
+            strategy = GenerationType.AUTO,
+            generator = "native"
+    )
+    @GenericGenerator(
+            name = "native",
+            strategy = "native"
+    )
+    @Column(name = "gps_data_id")
     private long id;
 
     @Column(name = "x")
@@ -16,7 +27,7 @@ public class GpsData {
     private float y;
 
     @OneToOne(fetch = FetchType.LAZY)
-    @MapsId
+    @JoinColumn(name = "marker_id")
     private Marker marker;
 
     public long getId() {
