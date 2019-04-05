@@ -1,0 +1,41 @@
+{
+    "compilerOptions": {
+        "target": "es3",
+        "jsx": "react",
+        "experimentalDecorators": true,
+        "noImplicitAny": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
+        "inlineSources": true,
+        "inlineSourceMap": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "strictNullChecks": true,
+        "strict": true,
+        "outFile": "../resources/static/js/client.js"
+        // "outFile": "H:/RAUL/NullCombustionException/Assignment1Example/target/classes/static/js/client.js"
+    },
+    "include": [
+        "**/*.ts",
+        "**/*.tsx",
+        "@types",
+        "node_modules"
+    ],
+    "exclude": [        
+        "bower_components",
+        "jspm_packages",
+        ".svn",
+        "src",
+        "test",
+        "web",
+        "ant",
+        "antbuild",
+        "out",
+        "*.iml",
+        "*.ipr",
+        "*.iws",
+        "xdeploy",
+        "xant9gr",
+        "doc"
+    ]
+}

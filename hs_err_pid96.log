@@ -1,0 +1,216 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  Internal Error (signature.cpp:267), pid=96, tid=0x0000000000002998
+#  Error: ShouldNotReachHere()
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_131-b11) (build 1.8.0_131-b11)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.131-b11 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000003445000):  JavaThread "main" [_thread_in_vm, id=10648, stack(0x00000000030c0000,0x00000000031c0000)]
+
+Stack: [0x00000000030c0000,0x00000000031c0000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  com.sun.org.apache.xerces.internal.impl.xs.traversers.XSDComplexTypeTraverser.traverseComplexTypeDecl(Lorg/w3c/dom/Element;Ljava/lang/String;[Ljava/lang/Object;Lcom/sun/org/apache/xerces/internal/impl/xs/traversers/XSDocumentInfo;Lcom/sun/org/apache/xerces/internal/impl/xs/SchemaGrammar;)Lcom/sun/org/apache/xerces/internal/impl/xs/XSComplexTypeDecl;+12
+j  com.sun.org.apache.xerces.internal.impl.xs.traversers.XSDComplexTypeTraverser.traverseLocal(Lorg/w3c/dom/Element;Lcom/sun/org/apache/xerces/internal/impl/xs/traversers/XSDocumentInfo;Lcom/sun/org/apache/xerces/internal/impl/xs/SchemaGrammar;)Lcom/sun/org/apache/xerces/internal/impl/xs/XSComplexTypeDecl;+31
+j  com.sun.org.apache.xerces.internal.impl.xs.traversers.XSDElementTraverser.traverseNamedElement(Lorg/w3c/dom/Element;[Ljava/lang/Object;Lcom/sun/org/apache/xerces/internal/impl/xs/traversers/XSDocumentInfo;Lcom/sun/org/apache/xerces/internal/impl/xs/SchemaGrammar;ZLcom/sun/org/apache/xerces/internal/xs/XSObject;)Lcom/sun/org/apache/xerces/internal/impl/xs/XSElementDecl;+678
+j  com.sun.org.apache.xerces.internal.impl.xs.traversers.XSDElementTraverser.traverseGlobal(Lorg/w3c/dom/Element;Lcom/sun/org/apache/xerces/internal/impl/xs/traversers/XSDocumentInfo;Lcom/sun/org/apache/xerces/internal/impl/xs/SchemaGrammar;)Lcom/sun/org/apache/xerces/internal/impl/xs/XSElementDecl;+20
+j  com.sun.org.apache.xerces.internal.impl.xs.traversers.XSDHandler.traverseSchemas(Ljava/util/ArrayList;)V+449
+j  com.sun.org.apache.xerces.internal.impl.xs.traversers.XSDHandler.parseSchema(Lcom/sun/org/apache/xerces/internal/xni/parser/XMLInputSource;Lcom/sun/org/apache/xerces/internal/impl/xs/XSDDescription;Ljava/util/Map;)Lcom/sun/org/apache/xerces/internal/impl/xs/SchemaGrammar;+567
+j  com.sun.org.apache.xerces.internal.impl.xs.XMLSchemaLoader.loadSchema(Lcom/sun/org/apache/xerces/internal/impl/xs/XSDDescription;Lcom/sun/org/apache/xerces/internal/xni/parser/XMLInputSource;Ljava/util/Map;)Lcom/sun/org/apache/xerces/internal/impl/xs/SchemaGrammar;+85
+j  com.sun.org.apache.xerces.internal.impl.xs.XMLSchemaLoader.loadGrammar(Lcom/sun/org/apache/xerces/internal/xni/parser/XMLInputSource;)Lcom/sun/org/apache/xerces/internal/xni/grammars/Grammar;+70
+j  com.sun.org.apache.xerces.internal.impl.xs.XMLSchemaLoader.loadGrammar([Lcom/sun/org/apache/xerces/internal/xni/parser/XMLInputSource;)V+14
+j  com.sun.org.apache.xerces.internal.jaxp.validation.XMLSchemaFactory.newSchema([Ljavax/xml/transform/Source;)Ljavax/xml/validation/Schema;+368
+j  javax.xml.validation.SchemaFactory.newSchema(Ljavax/xml/transform/Source;)Ljavax/xml/validation/Schema;+9
+j  org.hibernate.boot.cfgxml.internal.JaxbCfgProcessor.resolveLocalSchema(Ljava/lang/String;Ljava/lang/String;)Ljavax/xml/validation/Schema;+77
+j  org.hibernate.boot.cfgxml.internal.JaxbCfgProcessor.resolveLocalSchema(Ljava/lang/String;)Ljavax/xml/validation/Schema;+4
+j  org.hibernate.boot.cfgxml.internal.JaxbCfgProcessor.schema()Ljavax/xml/validation/Schema;+11
+j  org.hibernate.boot.cfgxml.internal.JaxbCfgProcessor.unmarshal(Ljavax/xml/stream/XMLEventReader;Lorg/hibernate/boot/jaxb/Origin;)Lorg/hibernate/boot/jaxb/cfg/spi/JaxbCfgHibernateConfiguration;+133
+j  org.hibernate.boot.cfgxml.internal.JaxbCfgProcessor.unmarshal(Ljava/io/InputStream;Lorg/hibernate/boot/jaxb/Origin;)Lorg/hibernate/boot/jaxb/cfg/spi/JaxbCfgHibernateConfiguration;+12
+j  org.hibernate.boot.cfgxml.internal.ConfigLoader.loadConfigXmlResource(Ljava/lang/String;)Lorg/hibernate/boot/cfgxml/spi/LoadedConfig;+79
+j  org.hibernate.boot.registry.StandardServiceRegistryBuilder.configure(Ljava/lang/String;)Lorg/hibernate/boot/registry/StandardServiceRegistryBuilder;+6
+j  org.hibernate.boot.registry.StandardServiceRegistryBuilder.configure()Lorg/hibernate/boot/registry/StandardServiceRegistryBuilder;+3
+j  HibernateUtil.buildSessionFactory()Lorg/hibernate/SessionFactory;+7
+j  HibernateUtil.<clinit>()V+0
+v  ~StubRoutines::call_stub
+j  ro.utcn.sd.dao.impl.hibernate.HibernateCartDao.<init>()V+5
+j  HibernateDaoFactory.getCartDao()Lro/utcn/sd/dao/CartDao;+4
+j  Main.insertInitialData(Lro/utcn/sd/dao/DaoFactory;)V+42
+j  Main.main([Ljava/lang/String;)V+8
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x000000001f172000 JavaThread "Service Thread" daemon [_thread_blocked, id=18288, stack(0x000000001fb60000,0x000000001fc60000)]
+  0x000000001f105000 JavaThread "C1 CompilerThread3" daemon [_thread_blocked, id=17928, stack(0x000000001fa60000,0x000000001fb60000)]
+  0x000000001f102000 JavaThread "C2 CompilerThread2" daemon [_thread_blocked, id=11900, stack(0x000000001f960000,0x000000001fa60000)]
+  0x000000001f101800 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=12268, stack(0x000000001f860000,0x000000001f960000)]
+  0x000000001f081800 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=14172, stack(0x000000001f760000,0x000000001f860000)]
+  0x000000001f06c800 JavaThread "Monitor Ctrl-Break" daemon [_thread_in_native, id=2320, stack(0x000000001f660000,0x000000001f760000)]
+  0x000000001ee6e800 JavaThread "Attach Listener" daemon [_thread_blocked, id=6532, stack(0x000000001f560000,0x000000001f660000)]
+  0x000000001ee6b800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=16624, stack(0x000000001f460000,0x000000001f560000)]
+  0x000000001ee60800 JavaThread "Finalizer" daemon [_thread_blocked, id=9960, stack(0x000000001f240000,0x000000001f340000)]
+  0x000000001cf6d000 JavaThread "Reference Handler" daemon [_thread_blocked, id=12520, stack(0x000000001ed40000,0x000000001ee40000)]
+=>0x0000000003445000 JavaThread "main" [_thread_in_vm, id=10648, stack(0x00000000030c0000,0x00000000031c0000)]
+
+Other Threads:
+  0x000000001cf68800 VMThread [stack: 0x000000001ec40000,0x000000001ed40000] [id=10664]
+  0x000000001f222800 WatcherThread [stack: 0x000000001fc60000,0x000000001fd60000] [id=12792]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ PSYoungGen      total 76288K, used 65369K [0x000000076b380000, 0x0000000770880000, 0x00000007c0000000)
+  eden space 65536K, 99% used [0x000000076b380000,0x000000076f356568,0x000000076f380000)
+  from space 10752K, 0% used [0x000000076fe00000,0x000000076fe00000,0x0000000770880000)
+  to   space 10752K, 0% used [0x000000076f380000,0x000000076f380000,0x000000076fe00000)
+ ParOldGen       total 175104K, used 0K [0x00000006c1a00000, 0x00000006cc500000, 0x000000076b380000)
+  object space 175104K, 0% used [0x00000006c1a00000,0x00000006c1a00000,0x00000006cc500000)
+ Metaspace       used 12855K, capacity 13074K, committed 13312K, reserved 1060864K
+  class space    used 1628K, capacity 1669K, committed 1792K, reserved 1048576K
+
+Card table byte_map: [0x0000000012900000,0x0000000013100000] byte_map_base: 0x000000000f2f3000
+
+Marking Bits: (ParMarkBitMap*) 0x0000000051c1c720
+ Begin Bits: [0x0000000013e50000, 0x0000000017de8000)
+ End Bits:   [0x0000000017de8000, 0x000000001bd80000)
+
+Polling page: 0x0000000001460000
+
+CodeCache: size=245760Kb used=3297Kb max_used=3297Kb free=242462Kb
+ bounds [0x0000000003540000, 0x0000000003880000, 0x0000000012540000]
+ total_blobs=1196 nmethods=858 adapters=251
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 2.101 Thread 0x000000001f105000  856       3       com.sun.org.apache.xerces.internal.util.SymbolTable::hash (53 bytes)
+Event: 2.101 Thread 0x000000001f105000 nmethod 856 0x0000000003877b50 code [0x0000000003877cc0, 0x0000000003877f88]
+Event: 2.101 Thread 0x000000001f105000  854       3       com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl::setScannerState (6 bytes)
+Event: 2.101 Thread 0x000000001f105000 nmethod 854 0x0000000003878110 code [0x0000000003878260, 0x00000000038783b0]
+Event: 2.101 Thread 0x000000001f105000  855       3       com.sun.org.apache.xerces.internal.xni.XMLString::setValues (16 bytes)
+Event: 2.101 Thread 0x000000001f105000 nmethod 855 0x0000000003878410 code [0x0000000003878560, 0x00000000038786d0]
+Event: 2.110 Thread 0x000000001f105000  857       3       java.lang.StringBuilder::append (8 bytes)
+Event: 2.110 Thread 0x000000001f105000 nmethod 857 0x0000000003878e50 code [0x0000000003878fc0, 0x0000000003879148]
+Event: 2.110 Thread 0x000000001f105000  858  s    1       java.util.Vector::size (5 bytes)
+Event: 2.110 Thread 0x000000001f105000 nmethod 858 0x00000000038791d0 code [0x0000000003879320, 0x0000000003879590]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (5 events):
+Event: 1.544 Thread 0x0000000003445000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00000000037075ec method=sun.misc.MetaIndex.mayContain(Ljava/lang/String;)Z @ 38
+Event: 1.913 Thread 0x0000000003445000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00000000038081a8 method=java.util.HashMap.getNode(ILjava/lang/Object;)Ljava/util/HashMap$Node; @ 129
+Event: 1.929 Thread 0x0000000003445000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000003803a0c method=java.util.HashMap.getNode(ILjava/lang/Object;)Ljava/util/HashMap$Node; @ 129
+Event: 1.936 Thread 0x0000000003445000 Uncommon trap: reason=range_check action=make_not_entrant pc=0x0000000003822028 method=sun.reflect.generics.parser.SignatureParser.current()C @ 34
+Event: 2.056 Thread 0x0000000003445000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000000000379b11c method=java.lang.AbstractStringBuilder.append(Ljava/lang/String;)Ljava/lang/AbstractStringBuilder; @ 1
+
+Internal exceptions (10 events):
+Event: 1.883 Thread 0x0000000003445000 Exception <a 'java/lang/NullPointerException'> (0x000000076ec17c08) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u131\8869\hotspot\src\share\vm\interpreter\linkResolver.cpp, line 1299]
+Event: 1.923 Thread 0x0000000003445000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076ed849a8) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u131\8869\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 605]
+Event: 1.924 Thread 0x0000000003445000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076ed86900) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u131\8869\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 605]
+Event: 1.924 Thread 0x0000000003445000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076ed8a308) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u131\8869\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 605]
+Event: 1.936 Thread 0x0000000003445000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': 79> (0x000000076edf55e8) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u131\8869\hotspot\src\share\vm\interpreter\interpreterRuntime.cpp, line 366]
+Event: 1.936 Thread 0x0000000003445000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': 38> (0x000000076edf6d80) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u131\8869\hotspot\src\share\vm\interpreter\interpreterRuntime.cpp, line 366]
+Event: 1.936 Thread 0x0000000003445000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': 78> (0x000000076edf7f38) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u131\8869\hotspot\src\share\vm\interpreter\interpreterRuntime.cpp, line 366]
+Event: 1.936 Thread 0x0000000003445000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': 81> (0x000000076edf90e0) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u131\8869\hotspot\src\share\vm\interpreter\interpreterRuntime.cpp, line 366]
+Event: 1.936 Thread 0x0000000003445000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': 83> (0x000000076edfa298) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u131\8869\hotspot\src\share\vm\interpreter\interpreterRuntime.cpp, line 366]
+Event: 2.056 Thread 0x0000000003445000 Implicit null exception at 0x000000000379ad56 to 0x000000000379b105
+
+Events (10 events):
+Event: 2.109 loading class com/sun/org/apache/xerces/internal/impl/xs/opti/NamedNodeMapImpl done
+Event: 2.110 loading class com/sun/org/apache/xerces/internal/impl/xs/util/XSObjectListImpl
+Event: 2.110 loading class com/sun/org/apache/xerces/internal/xs/XSObjectList
+Event: 2.111 loading class com/sun/org/apache/xerces/internal/xs/XSObjectList done
+Event: 2.111 loading class com/sun/org/apache/xerces/internal/impl/xs/util/XSObjectListImpl done
+Event: 2.111 loading class com/sun/org/apache/xerces/internal/impl/xs/util/XSObjectListImpl$1
+Event: 2.111 loading class com/sun/org/apache/xerces/internal/impl/xs/util/XSObjectListImpl$1 done
+Event: 2.111 loading class com/sun/org/apache/xerces/internal/impl/xs/XSAttributeGroupDecl
+Event: 2.111 loading class com/sun/org/apache/xerces/internal/xs/XSAttributeGroupDefinition
+Event: 2.111 loading class com/sun/org/apache/xerces/internal/xs/XSAttributeGroupDefinition done
+
+
+Dynamic libraries:
+0x00007ff665340000 - 0x00007ff665377000 	G:\Program Files\Java\jdk1.8.0_131\bin\java.exe
+0x00007ffffbc50000 - 0x00007ffffbe3d000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffff91b0000 - 0x00007ffff9263000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffff8be0000 - 0x00007ffff8e73000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ffff9860000 - 0x00007ffff9903000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffff8fb0000 - 0x00007ffff904e000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffffb910000 - 0x00007ffffb9ae000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffffa030000 - 0x00007ffffa152000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffff9e10000 - 0x00007ffff9fa7000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffff8bc0000 - 0x00007ffff8be0000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffffbb20000 - 0x00007ffffbb49000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffff8900000 - 0x00007ffff8a9a000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffff8b20000 - 0x00007ffff8bc0000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffff8800000 - 0x00007ffff88fa000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007fffe4830000 - 0x00007fffe4aa9000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.17763.379_none_05b83be8071c94a1\COMCTL32.dll
+0x00007ffff94d0000 - 0x00007ffff97fd000 	C:\WINDOWS\System32\combase.dll
+0x00007ffff8aa0000 - 0x00007ffff8b1e000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffffa180000 - 0x00007ffffa1ae000 	C:\WINDOWS\System32\IMM32.DLL
+0x0000000051ca0000 - 0x0000000051d72000 	G:\Program Files\Java\jdk1.8.0_131\jre\bin\msvcr100.dll
+0x0000000051400000 - 0x0000000051c9c000 	G:\Program Files\Java\jdk1.8.0_131\jre\bin\server\jvm.dll
+0x00007ffffa170000 - 0x00007ffffa178000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ffff3c60000 - 0x00007ffff3c84000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007fffdcd50000 - 0x00007fffdcd59000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ffffbbb0000 - 0x00007ffffbc1d000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007fffebf10000 - 0x00007fffebf1a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffff3c30000 - 0x00007ffff3c5d000 	C:\WINDOWS\SYSTEM32\WINMMBASE.dll
+0x00007ffff8490000 - 0x00007ffff84da000 	C:\WINDOWS\System32\cfgmgr32.dll
+0x0000000054980000 - 0x000000005498f000 	G:\Program Files\Java\jdk1.8.0_131\jre\bin\verify.dll
+0x0000000054910000 - 0x0000000054939000 	G:\Program Files\Java\jdk1.8.0_131\jre\bin\java.dll
+0x0000000054890000 - 0x00000000548b3000 	G:\Program Files\Java\jdk1.8.0_131\jre\bin\instrument.dll
+0x0000000054960000 - 0x0000000054976000 	G:\Program Files\Java\jdk1.8.0_131\jre\bin\zip.dll
+0x00007ffffa1c0000 - 0x00007ffffb6b0000 	C:\WINDOWS\System32\SHELL32.dll
+0x00007ffffb6d0000 - 0x00007ffffb778000 	C:\WINDOWS\System32\shcore.dll
+0x00007ffff7d20000 - 0x00007ffff846a000 	C:\WINDOWS\System32\windows.storage.dll
+0x00007ffff7c90000 - 0x00007ffff7cb4000 	C:\WINDOWS\System32\profapi.dll
+0x00007ffff7cc0000 - 0x00007ffff7d1d000 	C:\WINDOWS\System32\powrprof.dll
+0x00007ffff8e80000 - 0x00007ffff8ed2000 	C:\WINDOWS\System32\shlwapi.dll
+0x00007ffff7c50000 - 0x00007ffff7c61000 	C:\WINDOWS\System32\kernel.appcore.dll
+0x00007ffff8470000 - 0x00007ffff8487000 	C:\WINDOWS\System32\cryptsp.dll
+0x00007fffe8d90000 - 0x00007fffe8daa000 	C:\Program Files\JetBrains\IntelliJ IDEA 2018.2.6\bin\breakgen64.dll
+0x00000000548f0000 - 0x000000005490a000 	G:\Program Files\Java\jdk1.8.0_131\jre\bin\net.dll
+0x00007ffff70f0000 - 0x00007ffff7157000 	C:\WINDOWS\system32\mswsock.dll
+
+VM Arguments:
+jvm_args: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2018.2.6\lib\idea_rt.jar=63612:C:\Program Files\JetBrains\IntelliJ IDEA 2018.2.6\bin -Dfile.encoding=UTF-8 
+java_command: Main
+java_class_path (initial): G:\Program Files\Java\jdk1.8.0_131\jre\lib\charsets.jar;G:\Program Files\Java\jdk1.8.0_131\jre\lib\deploy.jar;G:\Program Files\Java\jdk1.8.0_131\jre\lib\ext\access-bridge-64.jar;G:\Program Files\Java\jdk1.8.0_131\jre\lib\ext\cldrdata.jar;G:\Program Files\Java\jdk1.8.0_131\jre\lib\ext\dnsns.jar;G:\Program Files\Java\jdk1.8.0_131\jre\lib\ext\jaccess.jar;G:\Program Files\Java\jdk1.8.0_131\jre\lib\ext\jfxrt.jar;G:\Program Files\Java\jdk1.8.0_131\jre\lib\ext\localedata.jar;G:\Program Files\Java\jdk1.8.0_131\jre\lib\ext\nashorn.jar;G:\Program Files\Java\jdk1.8.0_131\jre\lib\ext\sunec.jar;G:\Program Files\Java\jdk1.8.0_131\jre\lib\ext\sunjce_provider.jar;G:\Program Files\Java\jdk1.8.0_131\jre\lib\ext\sunmscapi.jar;G:\Program Files\Java\jdk1.8.0_131\jre\lib\ext\sunpkcs11.jar;G:\Program Files\Java\jdk1.8.0_131\jre\lib\ext\zipfs.jar;G:\Program Files\Java\jdk1.8.0_131\jre\lib\javaws.jar;G:\Program Files\Java\jdk1.8.0_131\jre\lib\jce.jar;G:\Program Files\Java\jdk1.8.0_131\jre\lib\jfr.jar;G:\Program Files\Java\jdk1.8.0_131\jre\lib\jfxswt.jar;G:\Program Files\Java\jdk1.8.0_131\jre\lib\jsse.jar;G:\Program Files\Java\jdk1.8.0_131\jre\lib\management-agent.jar;G:\Program Files\Java\jdk1.8.0_131\jre\lib\plugin.jar;G:\Program Files\Java\jdk1.8.0_131\jre\lib\resources.jar;G:\Program Files\Java\jdk1.8.0_131\jre\lib\rt.jar;H:\CTIe\AN III\SD\SoftwareDesignLabResources\Examples\Assignment1Example\target\classes;C:\Users\Ghisa.Ro.Raul\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\2.0.6.RELEASE\spring-boot-starter-data-jpa-2.0.6.RELEASE.jar;C:\Users\Ghisa.Ro.Raul\.m2\repository\org\springframework\boot\spring-boot-starter\2.0.6.RELEASE\spring-boot-starter-2.0.6.RELEASE.jar;C:\Users\Ghisa.Ro.Raul\.m2\repository\org\springframework\boot\spring-boot\2.0.6.RELEASE\spring-boot-2.0.6.RELEASE.jar;C:\Users\Ghisa.Ro.Raul\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\2.0.6.RELEASE\spring-boot-autoconfigure-2.0.6.RELEASE.jar;C:\User
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:\WINDOWS;C:\WINDOWS;C:\WINDOWS;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0\libnvvp;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\nodejs\;C:\apache-maven-3.6.0\bin;C:\Program Files\Git\cmd;C:\Program Files\PuTTY\;C:\ProgramData\chocolatey\bin;;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Go\bin;C:\Users\Ghisa.Ro.Raul\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\Ghisa.Ro.Raul\AppData\Local\Programs\Python\Python37\;C:\Users\Ghisa.Ro.Raul\AppData\Local\Microsoft\WindowsApps;C:\Users\Ghisa.Ro.Raul\AppData\Local\Programs\Python\Python37-32;C:\Users\Ghisa.Ro.Raul\AppData\Local\Programs\Python\Python37-32\Scripts;C:\Users\Ghisa.Ro.Raul\AppData\Roaming\npm;C:\tools\mysql\current\bin;;C:\Users\Ghisa.Ro.Raul\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Ghisa.Ro.Raul\go\bin
+USERNAME=Ghisa.Ro.Raul
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 60 Stepping 3, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 17763 (10.0.17763.379)
+
+CPU:total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 60 stepping 3, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2
+
+Memory: 4k page, physical 16663532k(5970680k free), swap 21245980k(4104152k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.131-b11) for windows-amd64 JRE (1.8.0_131-b11), built on Mar 15 2017 01:23:53 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Thu Mar 28 10:57:35 2019
+elapsed time: 2 seconds (0d 0h 0m 2s)
+
