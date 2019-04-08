@@ -918,58 +918,228 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
-    <table id="231" parent="6" name="gps_data"/>
-    <table id="232" parent="6" name="marker"/>
-    <column id="233" parent="231" name="gps_data_id">
+    <table id="231" parent="6" name="driver_session"/>
+    <table id="232" parent="6" name="free_parking_spot"/>
+    <table id="233" parent="6" name="gps_data"/>
+    <table id="234" parent="6" name="lat"/>
+    <table id="235" parent="6" name="lat_long"/>
+    <table id="236" parent="6" name="longitude"/>
+    <table id="237" parent="6" name="marker"/>
+    <column id="238" parent="231" name="driver_session_id">
       <Position>1</Position>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="234" parent="231" name="x">
+    <column id="239" parent="231" name="average_speed">
+      <Position>2</Position>
+      <DataType>double|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="240" parent="231" name="driver_profile">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="241" parent="231" name="engine_heat_time">
+      <Position>4</Position>
+      <DataType>double|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="242" parent="231" name="session_distance">
+      <Position>5</Position>
+      <DataType>double|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="243" parent="231" name="session_duration">
+      <Position>6</Position>
+      <DataType>double|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="244" parent="231" name="traffic_jam_present">
+      <Position>7</Position>
+      <DataType>bit(1)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="245" parent="231" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>driver_session_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="246" parent="232" name="free_parking_spot_id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="247" parent="232" name="latitude">
+      <Position>2</Position>
+      <DataType>double|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="248" parent="232" name="longitude">
+      <Position>3</Position>
+      <DataType>double|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="249" parent="232" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>free_parking_spot_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="250" parent="233" name="gps_data_id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="251" parent="233" name="x">
       <Position>2</Position>
       <DataType>float|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="235" parent="231" name="y">
+    <column id="252" parent="233" name="y">
       <Position>3</Position>
       <DataType>float|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="236" parent="231" name="marker_id">
+    <column id="253" parent="233" name="marker_id">
       <Position>4</Position>
       <DataType>bigint(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="237" parent="231" name="FK6847ak38vpxlaac2n0talx8kd">
+    <index id="254" parent="233" name="FK6847ak38vpxlaac2n0talx8kd">
       <ColNames>marker_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="238" parent="231" name="PRIMARY">
+    <key id="255" parent="233" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>gps_data_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="239" parent="231" name="FK6847ak38vpxlaac2n0talx8kd">
+    <foreign-key id="256" parent="233" name="FK6847ak38vpxlaac2n0talx8kd">
       <ColNames>marker_id</ColNames>
       <RefSchemaName>porsche-competition</RefSchemaName>
       <RefTableName>marker</RefTableName>
       <RefColNames>marker_id</RefColNames>
     </foreign-key>
-    <column id="240" parent="232" name="marker_id">
+    <column id="257" parent="234" name="long_id">
       <Position>1</Position>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="241" parent="232" name="hazard_type">
+    <column id="258" parent="234" name="value">
+      <Position>2</Position>
+      <DataType>double|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="259" parent="234" name="driver_session_id">
+      <Position>3</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="260" parent="234" name="FKsrg3x8u6b3lm1nsopyk6a2sfw">
+      <ColNames>driver_session_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="261" parent="234" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>long_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="262" parent="234" name="FKsrg3x8u6b3lm1nsopyk6a2sfw">
+      <ColNames>driver_session_id</ColNames>
+      <RefSchemaName>porsche-competition</RefSchemaName>
+      <RefTableName>driver_session</RefTableName>
+      <RefColNames>driver_session_id</RefColNames>
+    </foreign-key>
+    <column id="263" parent="235" name="long_id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="264" parent="235" name="latitude">
+      <Position>2</Position>
+      <DataType>double|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="265" parent="235" name="longitude">
+      <Position>3</Position>
+      <DataType>double|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="266" parent="235" name="driver_session_id">
+      <Position>4</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="267" parent="235" name="FKdpqtf1mwo28s9hv193utm4vp4">
+      <ColNames>driver_session_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="268" parent="235" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>long_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="269" parent="235" name="FKdpqtf1mwo28s9hv193utm4vp4">
+      <ColNames>driver_session_id</ColNames>
+      <RefSchemaName>porsche-competition</RefSchemaName>
+      <RefTableName>driver_session</RefTableName>
+      <RefColNames>driver_session_id</RefColNames>
+    </foreign-key>
+    <column id="270" parent="236" name="long_id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="271" parent="236" name="value">
+      <Position>2</Position>
+      <DataType>double|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="272" parent="236" name="driver_session_id">
+      <Position>3</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="273" parent="236" name="FK1rsxkv7p44abncxp3pwxqcr55">
+      <ColNames>driver_session_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="274" parent="236" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>long_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="275" parent="236" name="FK1rsxkv7p44abncxp3pwxqcr55">
+      <ColNames>driver_session_id</ColNames>
+      <RefSchemaName>porsche-competition</RefSchemaName>
+      <RefTableName>driver_session</RefTableName>
+      <RefColNames>driver_session_id</RefColNames>
+    </foreign-key>
+    <column id="276" parent="237" name="marker_id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="277" parent="237" name="hazard_type">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="242" parent="232" name="PRIMARY">
+    <key id="278" parent="237" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>marker_id</ColNames>
       <Primary>1</Primary>

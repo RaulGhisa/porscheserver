@@ -17,5 +17,8 @@
 
         <mapping class="ro.nullcombustionexception.entities.GpsData"/>
         <mapping class="ro.nullcombustionexception.entities.Marker"/>
+        <mapping class="ro.nullcombustionexception.entities.DriverSession"/>
+        <mapping class="ro.nullcombustionexception.entities.LatitudeLongitude"/>
+        <mapping class="ro.nullcombustionexception.entities.FreeParkingSpot"/>
     </session-factory>
 </hibernate-configuration>
